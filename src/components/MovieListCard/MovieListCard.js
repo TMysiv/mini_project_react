@@ -1,10 +1,14 @@
 import React from 'react';
 
-const MovieListCard = ({movie}) => {
-   const {backdrop_path}=movie
+const MovieListCard = ({movie:{title,backdrop_path,vote_average,overview}}) => {
+    const img = 'https://image.tmdb.org/t/p/original'
+    const sassa = `https://image.tmdb.org/t/p/w300/${backdrop_path}`
+
     return (
         <div>
-            <img src={backdrop_path} alt=""/>
+            <h4>{title}</h4>
+            <img src={sassa} alt=""/>
+            <h5>{vote_average}</h5>
         </div>
     );
 };

@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import discoverService from "../../services/discover.service";
+import MovieListCard from "../MovieListCard/MovieListCard";
 
 const MovieList = () => {
 
@@ -7,14 +8,15 @@ let [movies,setMovies] = useState([]);
 
     useEffect(()=>{
         discoverService.getAll().then(value => {
-            console.log(value.results)
             setMovies(value.results)
+
         })
     },[])
 
+    console.log(movies);
     return (
         <div>
-            {movies.map(movie=><MovieList key={movie.id} movie={movie}/>)}
+            {movies.map(value => <MovieListCard key={value.id} movie={value}/>)}
         </div>
     );
 };
