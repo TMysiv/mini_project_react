@@ -1,14 +1,13 @@
 import React from 'react';
+import {urls} from "../../configs/urls";
+import css from './movieListCard.css'
 
-const MovieListCard = ({movie:{title,backdrop_path,vote_average,overview}}) => {
-    const img = 'https://image.tmdb.org/t/p/original'
-    const sassa = `https://image.tmdb.org/t/p/w300/${backdrop_path}`
+const MovieListCard = ({movie:{title,backdrop_path,vote_average,poster_path}}) => {
 
     return (
-        <div>
-            <h4>{title}</h4>
-            <img src={sassa} alt=""/>
-            <h5>{vote_average}</h5>
+        <div className={'card'}>
+            <h5>{title}</h5>
+            <img src={`${urls.images}${backdrop_path}`} alt=""/>
         </div>
     );
 };
