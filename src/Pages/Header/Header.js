@@ -1,10 +1,7 @@
 import React from 'react';
+import {NavLink, Outlet} from "react-router-dom";
 
 import css from './header.css'
-import {NavLink, Outlet} from "react-router-dom";
-import {useDispatch} from "react-redux";
-import {getMethods} from "../../store/movie.slice";
-
 
 const Header = () => {
 
