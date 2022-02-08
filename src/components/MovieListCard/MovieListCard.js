@@ -1,13 +1,23 @@
 import React from 'react';
-import {urls} from "../../configs/urls";
-import css from './movieListCard.css'
+import {NavLink} from "react-router-dom";
+import {useDispatch} from "react-redux";
 
-const MovieListCard = ({movie:{title,backdrop_path,vote_average}}) => {
+import css from './movieListCard.css'
+import {imageUrls} from "../../configs/imageUrls";
+import {getId} from "../../store/card.slice";
+
+const MovieListCard = ({movie}) => {
+
+    const {title, backdrop_path, vote_average, id} = movie
+
+    const dispatch = useDispatch();
 
     return (
         <div className={'card'}>
             <h5>{title}</h5>
-            <img src={`${urls.images}${backdrop_path}`} alt=""/>
+            <NavLink to={id.toString()} onClick={()=>{dispatch(getId({id}))}} >
+                <img src={`${imageUrls.small}${backdrop_path}`} alt={title}/>
+            </NavLink>
             <h6>StarsRating: {vote_average}</h6>
         </div>
     );

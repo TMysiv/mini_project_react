@@ -6,6 +6,7 @@ export const getAllMovie = createAsyncThunk(
     async ({pageId}, {rejectWithValue}) => {
         try {
             const movies = await movieService.getAllMovie(pageId);
+            console.log(movies)
             return movies
         } catch (e) {
             return rejectWithValue(e.message)
@@ -148,6 +149,7 @@ const movieSlice = createSlice({
             state.status = 'rejected'
             state.error = action.payload
         },
+
         [getPopular.pending]: (state, action) => {
             state.status = 'pending'
         },
@@ -159,6 +161,7 @@ const movieSlice = createSlice({
             state.status = 'rejected'
             state.error = action.payload
         },
+
         [getTop.pending]: (state, action) => {
             state.status = 'pending'
         },
@@ -170,6 +173,7 @@ const movieSlice = createSlice({
             state.status = 'rejected'
             state.error = action.payload
         },
+
         [getComedies.pending]: (state, action) => {
             state.status = 'pending'
         },
@@ -181,6 +185,7 @@ const movieSlice = createSlice({
             state.status = 'rejected'
             state.error = action.payload
         },
+
         [getDramas.pending]: (state, action) => {
             state.status = 'pending'
         },
@@ -192,6 +197,7 @@ const movieSlice = createSlice({
             state.status = 'rejected'
             state.error = action.payload
         },
+
         [getActions.pending]: (state, action) => {
             state.status = 'pending'
         },
@@ -203,6 +209,7 @@ const movieSlice = createSlice({
             state.status = 'rejected'
             state.error = action.payload
         },
+
         [getAdventure.pending]: (state, action) => {
             state.status = 'pending'
         },
@@ -214,6 +221,7 @@ const movieSlice = createSlice({
             state.status = 'rejected'
             state.error = action.payload
         },
+
         [getAnimations.pending]: (state, action) => {
             state.status = 'pending'
         },
@@ -225,6 +233,7 @@ const movieSlice = createSlice({
             state.status = 'rejected'
             state.error = action.payload
         },
+
         [getFantasy.pending]: (state, action) => {
             state.status = 'pending'
         },
@@ -236,6 +245,7 @@ const movieSlice = createSlice({
             state.status = 'rejected'
             state.error = action.payload
         },
+
         [getFamily.pending]: (state, action) => {
             state.status = 'pending'
         },

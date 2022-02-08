@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import baseURL from "../configs/urls";
+import baseURL from "../configs/movieUrls";
 
 const axiosService = axios.create({
     baseURL,

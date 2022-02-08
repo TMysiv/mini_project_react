@@ -1,0 +1,8 @@
+.card_details{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+.card_details img{
+    width: 300px;
+}

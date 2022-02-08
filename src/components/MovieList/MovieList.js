@@ -5,6 +5,7 @@ import {decrPage, incPage} from "../../store/movie.slice";
 import MovieListCard from "../MovieListCard/MovieListCard";
 import css from './movieList.css'
 
+
 const MovieList = ({title}) => {
     const {movies, status, error, pageId} = useSelector(state => state['movieReducer']);
     const dispatch = useDispatch();
