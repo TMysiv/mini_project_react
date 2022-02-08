@@ -17,12 +17,12 @@ const Header = () => {
                 <div className={'movie_links'}>
                     <NavLink to={'/'}>MAIN</NavLink>
                     <NavLink to={'/popular'}>Popular</NavLink>
-                    <NavLink to={'/top_rated'}>Top</NavLink>
-                    <NavLink to={'/comedies'}>Comedies</NavLink>
-                    <NavLink to={'/dramas'}>Dramas</NavLink>
                     <NavLink to={'/action'}>Action</NavLink>
                     <NavLink to={'/adventure'}>Adventure</NavLink>
                     <NavLink to={'/animation'}>Animation</NavLink>
+                    <NavLink to={'/comedies'}>Comedies</NavLink>
+                    <NavLink to={'/dramas'}>Dramas</NavLink>
+                    <NavLink to={'/top_rated'}>Top</NavLink>
                     <NavLink to={'/fantasy'}>Fantasy</NavLink>
                     <NavLink to={'/family'}>Family</NavLink>
                 </div>

@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import MovieListCard from "../../components/MovieListCard/MovieListCard";
 import {decrPage, getFamily, incPage} from "../../store/movie.slice";
 import {useDispatch, useSelector} from "react-redux";
+import css from './family.css'
 
 const Family = () => {
 

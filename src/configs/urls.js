@@ -5,7 +5,7 @@ export default baseURL;
 export const urls = {
     discover: '/discover/movie?page=',
     popular: '/movie/now_playing?page=',
-    top: '/discover/movie?sort_by=vote_average&page=',
+    top: '/discover/movie?with_genres=10770&page=',
     comedies: '/discover/movie?with_genres=35&page=',
     dramas: '/discover/movie?with_genres=18&page=',
     actions: '/discover/movie?with_genres=28&page=',
