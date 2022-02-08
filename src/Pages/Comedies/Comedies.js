@@ -1,23 +1,21 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
+import {decrPage, getComedies, incPage} from "../../store/movie.slice";
+import MovieListCard from "../../components/MovieListCard/MovieListCard";
+import css from './comedies.css'
 
-import MovieListCard from "../MovieListCard/MovieListCard";
-import movieReducer, {getAllMovie, incPage,decrPage} from "../../store/movie.slice";
-import css from './movieList.css'
+const Comedies = () => {
 
-
-const MovieList = () => {
-
-    let {movies, status, error, pageId} = useSelector(state => state['movieReducer']);
-
-    let dispatch = useDispatch();
+    const {movies, status, error, pageId} = useSelector(state => state['movieReducer']);
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getAllMovie({pageId}))
+        dispatch(getComedies({pageId}))
     }, [pageId])
-    console.log(movies)
+
     return (
         <div className={'wrap_movie'}>
+            <h2>Comedies</h2>
             <div className={'cards_wrap'}>
                 {status === 'pending' && <h2>Loading...</h2>}
                 {error && <h2>{error}</h2>}
@@ -28,8 +26,7 @@ const MovieList = () => {
                 <button onClick={() => {dispatch(incPage({pageId}))}}>forward</button>
             </div>
         </div>
-    )
-        ;
+    );
 };
 
-export default MovieList;
+export default Comedies;
