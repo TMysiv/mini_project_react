@@ -1,0 +1,8 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 23%;
+    color: white;
+    align-items: center;
+    row-gap: 10px;
+}

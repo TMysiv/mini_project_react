@@ -1,6 +1,7 @@
 .wrap {
     display: flex;
 }
+
 .movie_box {
     background: #141C25;
     width: 20%;
@@ -9,21 +10,32 @@
     row-gap: 30px;
     color: #F1F3F5;
 }
-.movie_box_h2{
+
+.movie_box_h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 40px 0;
 }
-.movie_links{
+
+.movie_links {
     display: flex;
     flex-direction: column;
     align-items: center;
+    row-gap: 20px;
 }
-.movie_links a{
+
+.movie_links a {
     color: white;
     text-decoration: none;
     font-size: 20px;
 }
-.movie_outlet{
 
+.movie_outlet {
+    width: 80%;
+    background: #0D171F;
+
+}
+.movie_links  a[class='active']{
+    color: red;
 }
