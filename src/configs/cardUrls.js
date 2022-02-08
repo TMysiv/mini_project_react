@@ -1,3 +1,4 @@
 export const cardUrls = {
-    movieId:'movie'
+    movieId:'/movie',
+    actors:'/movie'
 }

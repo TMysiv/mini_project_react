@@ -1,8 +1,13 @@
-.card_details{
+.wrap_card{
+    display: flex;
+    margin: 50px 30px;
+
+}
+.card_left{
     display: flex;
     flex-direction: column;
-    color: white;
+    color: #F1F3F5;
 }
-.card_details img{
+.card_left img{
     width: 300px;
 }

@@ -6,7 +6,6 @@ export const getAllMovie = createAsyncThunk(
     async ({pageId}, {rejectWithValue}) => {
         try {
             const movies = await movieService.getAllMovie(pageId);
-            console.log(movies)
             return movies
         } catch (e) {
             return rejectWithValue(e.message)
