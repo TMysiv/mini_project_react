@@ -3,6 +3,7 @@ import {useSelector} from "react-redux";
 
 import {imageUrls} from "../../configs/imageUrls";
 import css from './details.css'
+import Star from "../Star/Star";
 
 const Details = () => {
     const {movie, actors} = useSelector(state => state['cardReducer']);
@@ -20,7 +21,7 @@ const Details = () => {
         <div className={color?'details_dark':'details_light'}>
             <div className={'details_top'}>
                 <h2>{title}</h2>
-                <h4>Vote_average: {vote_average}</h4>
+                <h4><Star/></h4>
             </div>
             <div className={'details_bottom'}>
                 <img src={`${imageUrls.normal}${poster_path}`} alt={original_title}/>

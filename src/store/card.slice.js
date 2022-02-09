@@ -1,5 +1,4 @@
 import {createSlice} from '@reduxjs/toolkit'
-import cardService from "../services/card.service";
 
 const cardSlice = createSlice({
     name: 'CardSlice',

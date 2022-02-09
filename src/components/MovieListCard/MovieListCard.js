@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import {NavLink} from "react-router-dom";
 import {useSelector} from "react-redux";
+import {Rating} from "react-simple-star-rating";
 
 import css from './movieListCard.css'
 import {imageUrls} from "../../configs/imageUrls";
@@ -16,7 +17,15 @@ const MovieListCard = ({movie}) => {
             <NavLink to={id.toString()}>
                 <img src={`${imageUrls.small}${backdrop_path}`} alt={title}/>
             </NavLink>
-            <h6>StarsRating: {vote_average}</h6>
+            <div>
+                <Rating
+                    ratingValue={vote_average * 10}
+                    size={20}
+                    fillColor='orange'
+                    emptyColor='gray'
+                />
+                {vote_average}
+            </div>
         </div>
     );
 };
