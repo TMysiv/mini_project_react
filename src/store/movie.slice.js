@@ -262,4 +262,4 @@ const movieSlice = createSlice({
 let movieReducer = movieSlice.reducer;
 export default movieReducer
 
-export const {incPage, decrPage,getMethods} = movieSlice.actions;
+export const {incPage, decrPage, getMethods} = movieSlice.actions;
