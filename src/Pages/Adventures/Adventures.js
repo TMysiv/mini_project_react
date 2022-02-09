@@ -21,4 +21,4 @@ const Adventures = () => {
     );
 };
 
-export default Adventures;
+export {Adventures};

@@ -21,4 +21,4 @@ const Recommended = () => {
     );
 };
 
-export default Recommended;
+export {Recommended};

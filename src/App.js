@@ -1,17 +1,9 @@
 import React from 'react';
 import {Route, Routes} from "react-router-dom";
 
-import Header from "./Pages/Header/Header";
-import Popular from "./Pages/Popular/Popular";
-import Top from "./Pages/Top/Top";
-import Comedies from "./Pages/Comedies/Comedies";
-import Dramas from "./Pages/Dramas/Dramas";
-import Actions from "./Pages/Actions/Actions";
-import Adventures from "./Pages/Adventures/Adventures";
-import Animations from "./Pages/Animations/Animations";
-import Fantasy from "./Pages/Fantasy/Fantasy";
-import Family from "./Pages/Family/Family";
-import Recommended from "./Pages/Recommended/Recommended";
+import {Header,Popular,Top,Comedies,Dramas,Actions,
+    Adventures,Animations,Family,Fantasy,Recommended} from './Pages'
+
 import MovieCardDetails from "./components/MovieCardDetails/MovieCardDetails";
 
 const App = () => {

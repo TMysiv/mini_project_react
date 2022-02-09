@@ -21,4 +21,4 @@ const Family = () => {
     );
 };
 
-export default Family;
+export {Family};

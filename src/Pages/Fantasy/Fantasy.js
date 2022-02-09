@@ -21,4 +21,4 @@ const Fantasy = () => {
     );
 };
 
-export default Fantasy;
+export {Fantasy};

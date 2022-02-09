@@ -21,4 +21,4 @@ const Actions = () => {
     );
 };
 
-export default Actions;
+export {Actions};

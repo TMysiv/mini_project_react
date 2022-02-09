@@ -21,4 +21,4 @@ const Dramas = () => {
     );
 };
 
-export default Dramas;
+export {Dramas};

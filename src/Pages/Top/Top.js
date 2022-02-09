@@ -21,4 +21,4 @@ const Top = () => {
     );
 };
 
-export default Top;
+export {Top};

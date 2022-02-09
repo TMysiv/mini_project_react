@@ -8,11 +8,10 @@ const Details = () => {
     const {movie, actors} = useSelector(state => state['cardReducer']);
 
     const {cast} = actors
-
     const sliceCast = cast && cast.slice(0, 6);
-    console.log(sliceCast)
+
     const {
-        poster_path, genres, original_title, title, original_language, overview, production_companies,
+        poster_path, genres, original_title, title, overview,
         production_countries, release_date, runtime, budget, vote_average
     } = movie
 

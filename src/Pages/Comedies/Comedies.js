@@ -22,4 +22,4 @@ const Comedies = () => {
     );
 };
 
-export default Comedies;
+export {Comedies};

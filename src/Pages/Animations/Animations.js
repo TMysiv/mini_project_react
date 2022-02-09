@@ -21,4 +21,4 @@ const Animations = () => {
     );
 };
 
-export default Animations;
+export {Animations};
