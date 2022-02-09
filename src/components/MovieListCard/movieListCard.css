@@ -1,8 +1,17 @@
-.card{
+.card_dark{
     display: flex;
     flex-direction: column;
     width: 23%;
     color: white;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.card_light{
+    display: flex;
+    flex-direction: column;
+    width: 23%;
+    color: #0c0c0c;
     align-items: center;
     row-gap: 10px;
 }

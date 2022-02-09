@@ -1,4 +1,4 @@
-.details {
+.details_dark {
     display: flex;
     margin-top: 90px;
     margin-left: 50px;
@@ -6,6 +6,15 @@
     width: 60%;
     row-gap: 20px;
     color: white;
+}
+.details_light {
+    display: flex;
+    margin-top: 90px;
+    margin-left: 50px;
+    flex-direction: column;
+    width: 60%;
+    row-gap: 20px;
+    color: #050505;
 }
 
 .details_top {
@@ -21,13 +30,22 @@
 
 }
 
-.details_right p {
+.details_right_dark p {
     font-size: 17px;
     padding-bottom: 30px;
     color: #e5e0e0;
 }
+.details_right_light p {
+    font-size: 17px;
+    padding-bottom: 30px;
+    color: #131313;
+}
 
-.details_right h5 {
+.details_right_dark h5 {
+    font-size: 16px;
+    padding: 10px 0;
+}
+.details_right_light h5 {
     font-size: 16px;
     padding: 10px 0;
 }

@@ -7,12 +7,12 @@ import css from './movieList.css'
 
 
 const MovieList = ({title}) => {
-    const {movies, status, error, pageId} = useSelector(state => state['movieReducer']);
+    const {movies, status, error, pageId,color} = useSelector(state => state['movieReducer']);
     const dispatch = useDispatch();
 
     return (
 
-        <div className={'wrap_movie'}>
+        <div className={color?'wrap_movie_dark':'wrap_movie_light'}>
             <h2>{title}</h2>
             <div className={'cards_wrap'}>
                 {status === 'pending' && <h2>Loading...</h2>}

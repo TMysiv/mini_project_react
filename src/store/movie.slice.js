@@ -122,6 +122,7 @@ const movieSlice = createSlice({
         pageId: 1,
         status: null,
         error: null,
+        color:true
     },
     reducers: {
         incPage: (state, action) => {
@@ -133,6 +134,9 @@ const movieSlice = createSlice({
             } else {
                 state.pageId = 1
             }
+        },
+        getSwitch:(state,action)=>{
+            state.color = !action.payload.color
         }
 
     },
@@ -262,4 +266,4 @@ const movieSlice = createSlice({
 let movieReducer = movieSlice.reducer;
 export default movieReducer
 
-export const {incPage, decrPage, getMethods} = movieSlice.actions;
+export const {incPage, decrPage, getSwitch} = movieSlice.actions;

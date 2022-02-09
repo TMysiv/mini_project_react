@@ -6,13 +6,17 @@
     justify-content: center;
     padding-top: 30px;
 }
-.wrap_movie{
+.wrap_movie_dark , .wrap_movie_light{
     display: flex;
     flex-direction: column;
     padding: 40px 0;
 }
-.wrap_movie h2{
+.wrap_movie_dark h2{
     color: white;
+    padding-left: 50px;
+}
+.wrap_movie_light h2{
+    color: #090909;
     padding-left: 50px;
 }
 .cards_button button{

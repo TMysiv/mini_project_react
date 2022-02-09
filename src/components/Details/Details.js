@@ -6,6 +6,7 @@ import css from './details.css'
 
 const Details = () => {
     const {movie, actors} = useSelector(state => state['cardReducer']);
+    const {color} = useSelector(state => state['movieReducer']);
 
     const {cast} = actors
     const sliceCast = cast && cast.slice(0, 6);
@@ -16,14 +17,14 @@ const Details = () => {
     } = movie
 
     return (
-        <div className={'details'}>
+        <div className={color?'details_dark':'details_light'}>
             <div className={'details_top'}>
                 <h2>{title}</h2>
                 <h4>Vote_average: {vote_average}</h4>
             </div>
             <div className={'details_bottom'}>
                 <img src={`${imageUrls.normal}${poster_path}`} alt={original_title}/>
-                <div className={'details_right'}>
+                <div className={color?'details_right_dark':'details_right_light'}>
                     <p>{overview}</p>
                     <h5 className={'actors'}>Original_name: {original_title}</h5>
                     <span className={'actors'}>Genres:  </span>{genres && genres.map(genre => <span key={genre.id}>{genre.name},</span>)}
