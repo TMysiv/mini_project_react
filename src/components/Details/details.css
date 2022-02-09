@@ -1,4 +1,4 @@
-.details{
+.details {
     display: flex;
     margin-top: 90px;
     margin-left: 50px;
@@ -7,24 +7,33 @@
     row-gap: 20px;
     color: white;
 }
-.details_top{
+
+.details_top {
     display: flex;
     justify-content: space-between;
 
 }
-.details_bottom{
+
+.details_bottom {
     display: flex;
     justify-content: space-between;
     column-gap: 40px;
 
 }
+
 .details_right p {
-font-size: 16px;
-    padding-bottom: 10px;
+    font-size: 17px;
+    padding-bottom: 20px;
+    color: #e5e0e0;
 }
 
-.details_right h5{
+.details_right h5 {
     font-size: 16px;
-    padding:10px 0;
+    padding: 10px 0;
+}
+
+.actors {
+    font-size: 18px;
+    padding-top: 10px;
 }
 
