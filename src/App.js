@@ -2,9 +2,7 @@ import React from 'react';
 import {Route, Routes} from "react-router-dom";
 
 import {Header,Recommended} from './Pages'
-
-import MovieList from "./components/MovieList/MovieList";
-import MovieCardDetails from "./components/MovieCardDetails/MovieCardDetails";
+import {MovieCardDetails, MovieList} from "./components";
 
 const App = () => {
 

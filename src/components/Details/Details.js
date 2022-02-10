@@ -3,7 +3,7 @@ import {useSelector} from "react-redux";
 
 import {imageUrls} from "../../configs/imageUrls";
 import css from './details.css'
-import Star from "../Star/Star";
+import {Star} from "../Star/Star";
 
 const Details = () => {
     const {movie, actors} = useSelector(state => state['cardReducer']);
@@ -42,4 +42,4 @@ const Details = () => {
     );
 };
 
-export default Details;
+export {Details};

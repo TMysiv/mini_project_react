@@ -4,7 +4,7 @@ import {useParams} from "react-router-dom";
 
 import css from './card_details.css'
 import {getActors, getMovie} from "../../store/card.slice";
-import Details from "../Details/Details";
+import {Details} from "../Details/Details";
 import cardService from "../../services/card.service";
 
 const MovieCardDetails = () => {
@@ -31,4 +31,4 @@ const MovieCardDetails = () => {
     );
 };
 
-export default MovieCardDetails;
+export {MovieCardDetails};

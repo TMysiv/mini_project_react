@@ -1,7 +1,9 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
+
 import {getAllGenres} from "../../store/genresSlice";
-import Genre from "../Genre/Genre";
+import {Genre} from "../Genre/Genre";
+import css from './genres.css'
 
 const Genres = () => {
     const {genres} = useSelector(state => state['genresReducer']);
@@ -13,10 +15,10 @@ const Genres = () => {
     },[])
 
     return (
-        <div>
+        <div className={'links'}>
             {genres && genres.map(genre=><Genre key={genre.id}genre={genre}/>)}
         </div>
     );
 };
 
-export default Genres;
+export {Genres};

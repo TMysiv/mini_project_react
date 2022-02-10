@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Rating} from "react-simple-star-rating";
 import {useSelector} from "react-redux";
 
@@ -19,4 +19,4 @@ const Star = () => {
     );
 };
 
-export default Star;
+export {Star};

@@ -15,11 +15,7 @@ const cardSlice = createSlice({
         getActors: (state,action) => {
             state.actors = action.payload.value
         }
-    },
-    extraReducers: {
-
     }
-
 })
 
 const cardReducer = cardSlice.reducer;

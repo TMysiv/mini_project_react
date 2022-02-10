@@ -4,7 +4,8 @@ import {useDispatch, useSelector} from "react-redux";
 
 import css from './header.css'
 import {getSwitch} from "../../store/movie.slice";
-import Genres from "../../components/Genres/Genres";
+import {Genres} from "../../components";
+
 
 const Header = () => {
 

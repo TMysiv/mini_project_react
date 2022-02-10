@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {NavLink} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {Rating} from "react-simple-star-rating";
@@ -6,7 +6,7 @@ import {Rating} from "react-simple-star-rating";
 import css from './movieListCard.css'
 import {imageUrls} from "../../configs/imageUrls";
 
-const MovieListCard = ({movie}) => {
+const MovieListCard = ({movie,recommended}) => {
 
     const {color} = useSelector(state => state['movieReducer']);
     const {title, backdrop_path, vote_average, id} = movie
@@ -14,7 +14,7 @@ const MovieListCard = ({movie}) => {
     return (
         <div className={ color?'card_dark':'card_light'}>
             <h5>{title}</h5>
-            <NavLink to={id.toString()}>
+            <NavLink to={recommended?`/main/${id.toString()}`:id.toString()}>
                 <img src={`${imageUrls.small}${backdrop_path}`} alt={title}/>
             </NavLink>
             <div>
@@ -30,4 +30,4 @@ const MovieListCard = ({movie}) => {
     );
 };
 
-export default MovieListCard;
+export {MovieListCard};

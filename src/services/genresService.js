@@ -1,8 +1,8 @@
 import axiosService from "./axios.service";
-import {movieUrls} from "../configs/movieUrls";
+import {genresUrls} from "../configs/genresUrls";
 
 const genresService ={
-    getGenres:()=>axiosService.get(movieUrls.genres).then(value => value.data).then(value => value.genres)
+    getGenres:()=>axiosService.get(genresUrls.genres).then(value => value.data).then(value => value.genres)
 }
 
 export default genresService

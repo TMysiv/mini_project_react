@@ -1,6 +1,7 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 import {useDispatch} from "react-redux";
+
 import {getGenresId} from "../../store/genresSlice";
 
 const Genre = ({genre:{id,name}}) => {
@@ -14,4 +15,4 @@ const Genre = ({genre:{id,name}}) => {
     );
 };
 
-export default Genre;
+export {Genre};

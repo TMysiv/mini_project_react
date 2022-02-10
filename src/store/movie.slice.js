@@ -5,8 +5,9 @@ export const getAllMovie = createAsyncThunk(
     'movieSlice/getAllMovie',
     async ({genresId,pageId}, {rejectWithValue}) => {
         try {
-            const movies = await movieService.getMovie(genresId,pageId);
-            return movies
+            const values = await movieService.getMovie(genresId,pageId);
+            const {results,total_pages} = values
+            return {results, total_pages}
         } catch (e) {
             return rejectWithValue(e.message)
         }
@@ -16,8 +17,9 @@ export const getPopularMovie = createAsyncThunk(
     'movieSlice/getPopular',
     async ({pageId}, {rejectWithValue}) => {
         try {
-            const popular = await movieService.getPopular(pageId);
-            return popular
+            const values = await movieService.getPopular(pageId);
+            const {results,total_pages} = values
+            return {results, total_pages}
         } catch (e) {
             return rejectWithValue(e.message)
         }
@@ -28,6 +30,7 @@ const movieSlice = createSlice({
     name: 'movieSlice',
     initialState: {
         movies: [],
+        total_pages:null,
         pageId: 1,
         status: null,
         error: null,
@@ -35,7 +38,12 @@ const movieSlice = createSlice({
     },
     reducers: {
         incPage: (state, action) => {
-            state.pageId = action.payload.pageId + 1
+
+            if (action.payload.pageId < state.total_pages){
+                state.pageId = action.payload.pageId + 1
+            }else{
+                state.pageId = state.total_pages
+            }
         },
         decrPage: (state, action) => {
             if (action.payload.pageId > 1) {
@@ -55,7 +63,8 @@ const movieSlice = createSlice({
         },
         [getAllMovie.fulfilled]: (state, action) => {
             state.status = 'fulfilled'
-            state.movies = action.payload
+            state.movies = action.payload.results
+            state.total_pages = action.payload.total_pages
         },
         [getAllMovie.rejected]: (state, action) => {
             state.status = 'rejected'
@@ -66,7 +75,8 @@ const movieSlice = createSlice({
         },
         [getPopularMovie.fulfilled]: (state, action) => {
             state.status = 'fulfilled'
-            state.movies = action.payload
+            state.movies = action.payload.results
+            state.total_pages = action.payload.total_pages
         },
         [getPopularMovie.rejected]: (state, action) => {
             state.status = 'rejected'
