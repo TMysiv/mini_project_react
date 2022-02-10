@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 
 import css from './header.css'
 import {getSwitch} from "../../store/movie.slice";
+import Genres from "../../components/Genres/Genres";
 
 const Header = () => {
 
@@ -20,15 +21,7 @@ const Header = () => {
                 </div>
                 <div className={color?'movie_links_dark':'movie_links_light'}>
                     <NavLink to={'/'}>MAIN</NavLink>
-                    <NavLink to={'/popular'}>Popular</NavLink>
-                    <NavLink to={'/action'}>Action</NavLink>
-                    <NavLink to={'/adventure'}>Adventure</NavLink>
-                    <NavLink to={'/animation'}>Animation</NavLink>
-                    <NavLink to={'/comedies'}>Comedies</NavLink>
-                    <NavLink to={'/dramas'}>Dramas</NavLink>
-                    <NavLink to={'/top_rated'}>Top</NavLink>
-                    <NavLink to={'/fantasy'}>Fantasy</NavLink>
-                    <NavLink to={'/family'}>Family</NavLink>
+                    <Genres/>
                 </div>
             </div>
             <div className={color?'movie_outlet_dark':'movie_outlet_light'}>

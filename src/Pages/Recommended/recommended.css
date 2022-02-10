@@ -1,0 +1,32 @@
+.cards_wrap{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1%;
+    row-gap: 20px;
+    justify-content: center;
+    padding-top: 30px;
+}
+.wrap_movie_dark , .wrap_movie_light{
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0;
+}
+.wrap_movie_dark h2{
+    color: white;
+    padding-left: 50px;
+}
+.wrap_movie_light h2{
+    color: #090909;
+    padding-left: 50px;
+}
+.cards_button button{
+    width: 10%;
+    background: white;
+    cursor: pointer;
+}
+.cards_button{
+    display: flex;
+    justify-content: center;
+    gap: 1%;
+    margin-top: 40px;
+}
