@@ -2,15 +2,17 @@ import React from 'react';
 import {NavLink} from "react-router-dom";
 import {useDispatch} from "react-redux";
 
-import {getGenresId} from "../../store/genresSlice";
+import {getGenres} from "../../store/movie.slice";
 
-const Genre = ({genre:{id,name}}) => {
+const Genre = ({genre}) =>
+{
+    const {id,name} =genre
 
     const dispatch = useDispatch();
 
     return (
         <div>
-            <NavLink to={name} onClick={()=>{dispatch(getGenresId({id}))}}>{name}</NavLink>
+            <NavLink to={name} onClick={()=>{dispatch(getGenres({genre}))}}>{name}</NavLink>
         </div>
     );
 };

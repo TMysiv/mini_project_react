@@ -18,14 +18,10 @@ const genresSlice = createSlice({
     name:'genresSlice',
     initialState:{
         genres:[],
-        genresId:18,
         status:null,
         error:null
     },
     reducers:{
-        getGenresId:(state,action)=>{
-            state.genresId = action.payload.id
-        }
     },
     extraReducers:{
         [getAllGenres.pending]:(state,action)=>{
@@ -45,4 +41,3 @@ const genresSlice = createSlice({
 const genresReducer = genresSlice.reducer;
 export default genresReducer
 
-export const {getGenresId} = genresSlice.actions;

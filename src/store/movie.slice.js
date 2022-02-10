@@ -3,10 +3,10 @@ import movieService from "../services/movie.service";
 
 export const getAllMovie = createAsyncThunk(
     'movieSlice/getAllMovie',
-    async ({genresId,pageId}, {rejectWithValue}) => {
+    async ({genresId, pageId}, {rejectWithValue}) => {
         try {
-            const values = await movieService.getMovie(genresId,pageId);
-            const {results,total_pages} = values
+            const values = await movieService.getMovie(genresId, pageId);
+            const {results, total_pages} = values
             return {results, total_pages}
         } catch (e) {
             return rejectWithValue(e.message)
@@ -18,7 +18,7 @@ export const getPopularMovie = createAsyncThunk(
     async ({pageId}, {rejectWithValue}) => {
         try {
             const values = await movieService.getPopular(pageId);
-            const {results,total_pages} = values
+            const {results, total_pages} = values
             return {results, total_pages}
         } catch (e) {
             return rejectWithValue(e.message)
@@ -30,18 +30,20 @@ const movieSlice = createSlice({
     name: 'movieSlice',
     initialState: {
         movies: [],
-        total_pages:null,
+        total_pages: null,
+        genresId: 18,
+        genreName:'',
         pageId: 1,
         status: null,
         error: null,
-        color:true
+        color: true
     },
     reducers: {
         incPage: (state, action) => {
 
-            if (action.payload.pageId < state.total_pages){
+            if (action.payload.pageId < state.total_pages) {
                 state.pageId = action.payload.pageId + 1
-            }else{
+            } else {
                 state.pageId = state.total_pages
             }
         },
@@ -52,8 +54,15 @@ const movieSlice = createSlice({
                 state.pageId = 1
             }
         },
-        getSwitch:(state,action)=>{
+        getSwitch: (state, action) => {
             state.color = !action.payload.color
+        },
+        getGenres: (state, action) => {
+            if (action.payload.genre) {
+                state.genresId = action.payload.genre.id
+                state.genreName = action.payload.genre.name
+                state.pageId = 1
+            }
         }
 
     },
@@ -88,4 +97,4 @@ const movieSlice = createSlice({
 let movieReducer = movieSlice.reducer;
 export default movieReducer
 
-export const {incPage, decrPage, getSwitch} = movieSlice.actions;
+export const {incPage, decrPage, getSwitch, getGenres} = movieSlice.actions;
