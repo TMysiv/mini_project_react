@@ -21,8 +21,7 @@ const genresSlice = createSlice({
         status:null,
         error:null
     },
-    reducers:{
-    },
+    reducers:{},
     extraReducers:{
         [getAllGenres.pending]:(state,action)=>{
             state.status = 'pending'

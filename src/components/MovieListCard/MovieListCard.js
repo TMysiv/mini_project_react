@@ -13,10 +13,13 @@ const MovieListCard = ({movie,recommended}) => {
 
     return (
         <div className={ color?'card_dark':'card_light'}>
+
             <h5>{title}</h5>
+
             <NavLink to={recommended?`/main/${id.toString()}`:id.toString()}>
                 <img src={`${imageUrls.small}${backdrop_path}`} alt={title}/>
             </NavLink>
+
             <div>
                 <Rating
                     ratingValue={vote_average * 10}
@@ -26,6 +29,7 @@ const MovieListCard = ({movie,recommended}) => {
                 />
                 {vote_average}
             </div>
+
         </div>
     );
 };

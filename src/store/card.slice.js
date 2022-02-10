@@ -4,9 +4,7 @@ const cardSlice = createSlice({
     name: 'CardSlice',
     initialState: {
         movie: {},
-        actors: {},
-        status: null,
-        error: null
+        actors: {}
     },
     reducers: {
         getMovie: (state,action) => {

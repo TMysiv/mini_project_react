@@ -14,17 +14,21 @@ const Details = () => {
 
     const {
         poster_path, genres, original_title, title, overview,
-        production_countries, release_date, runtime, budget, vote_average
+        production_countries, release_date, runtime, budget
     } = movie
 
     return (
         <div className={color?'details_dark':'details_light'}>
+
             <div className={'details_top'}>
                 <h2>{title}</h2>
                 <h4><Star/></h4>
             </div>
+
             <div className={'details_bottom'}>
+
                 <img src={`${imageUrls.normal}${poster_path}`} alt={original_title}/>
+
                 <div className={color?'details_right_dark':'details_right_light'}>
                     <p>{overview}</p>
                     <h5 className={'actors'}>Original_name: {original_title}</h5>
@@ -36,6 +40,7 @@ const Details = () => {
                     key={country.id}>{country.name}</span>)}
                     <h5>Budget: {budget}$</h5>
                 </div>
+
             </div>
 
         </div>

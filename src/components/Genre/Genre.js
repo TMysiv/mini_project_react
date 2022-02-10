@@ -6,7 +6,7 @@ import {getGenres} from "../../store/movie.slice";
 
 const Genre = ({genre}) =>
 {
-    const {id,name} =genre
+    const {name} =genre
 
     const dispatch = useDispatch();
 

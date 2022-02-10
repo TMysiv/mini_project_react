@@ -26,21 +26,21 @@ export const getPopularMovie = createAsyncThunk(
     }
 )
 
+const initialState = {
+    movies: [],
+    total_pages: null,
+    genresId: 18,
+    genreName: '',
+    pageId: 1,
+    status: null,
+    error: null,
+    color: true
+}
 const movieSlice = createSlice({
     name: 'movieSlice',
-    initialState: {
-        movies: [],
-        total_pages: null,
-        genresId: 18,
-        genreName:'',
-        pageId: 1,
-        status: null,
-        error: null,
-        color: true
-    },
+    initialState: initialState,
     reducers: {
         incPage: (state, action) => {
-
             if (action.payload.pageId < state.total_pages) {
                 state.pageId = action.payload.pageId + 1
             } else {
@@ -64,7 +64,6 @@ const movieSlice = createSlice({
                 state.pageId = 1
             }
         }
-
     },
     extraReducers: {
         [getAllMovie.pending]: (state, action) => {

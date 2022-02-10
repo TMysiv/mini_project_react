@@ -6,7 +6,7 @@ import {Genre} from "../Genre/Genre";
 import css from './genres.css'
 
 const Genres = () => {
-    const {genres} = useSelector(state => state['genresReducer']);
+    const {genres,status,error} = useSelector(state => state['genresReducer']);
 
     const dispatch = useDispatch();
 
@@ -16,6 +16,8 @@ const Genres = () => {
 
     return (
         <div className={'links'}>
+            {status === 'pending' && <h2>Loading...</h2>}
+            {error && <h2>{error}</h2>}
             {genres && genres.map(genre=><Genre key={genre.id}genre={genre}/>)}
         </div>
     );
