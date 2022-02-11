@@ -4,6 +4,7 @@ import {useSelector} from "react-redux";
 import {imageUrls} from "../../configs/imageUrls";
 import css from './details.css'
 import {Star} from "../Star/Star";
+import Youtube from "../YouTube/Youtube";
 
 const Details = () => {
     const {movie, actors} = useSelector(state => state['cardReducer']);
@@ -14,7 +15,7 @@ const Details = () => {
 
     const {
         poster_path, genres, original_title, title, overview,
-        production_countries, release_date, runtime, budget
+        production_countries, release_date, runtime, budget,
     } = movie
 
     return (
@@ -34,14 +35,17 @@ const Details = () => {
                     <h5 className={'actors'}>Original_name: {original_title}</h5>
                     <span className={'actors'}>Genres:  </span>{genres && genres.map(genre => <span key={genre.id}>{genre.name},</span>)}
                     <h5 className={'actors'}>Release_date: {release_date}</h5>
-                    <span className={'actors'}>Actors:  </span>{sliceCast && sliceCast.map(actor => <span>{actor.name},    </span>)}
+                    <span className={'actors'}>Actors:  </span>{sliceCast && sliceCast.map(actor => <span key={actor.id}>{actor.name},    </span>)}
                     <h5>Runtime: {runtime} hv</h5>
                     <span className={'actors'}>Production: </span>{production_countries && production_countries.map(country => <span
                     key={country.id}>{country.name}</span>)}
                     <h5>Budget: {budget}$</h5>
+
                 </div>
 
             </div>
+            <h3>Trailer</h3>
+            <Youtube/>
 
         </div>
     );

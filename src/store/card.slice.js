@@ -4,7 +4,8 @@ const cardSlice = createSlice({
     name: 'CardSlice',
     initialState: {
         movie: {},
-        actors: {}
+        actors: {},
+        videos:{}
     },
     reducers: {
         getMovie: (state,action) => {
@@ -12,12 +13,16 @@ const cardSlice = createSlice({
         },
         getActors: (state,action) => {
             state.actors = action.payload.value
+        },
+        getVideos:(state,action)=>{
+            state.videos = action.payload.video
         }
+
     }
 })
 
 const cardReducer = cardSlice.reducer;
 export default cardReducer
 
-export const {getActors,getMovie} = cardSlice.actions
+export const {getActors,getMovie,getVideos} = cardSlice.actions
 
