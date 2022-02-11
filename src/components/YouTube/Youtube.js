@@ -11,16 +11,15 @@ const Youtube = () => {
         height: '390',
         width: '640',
         playerVars: {
-            // https://developers.google.com/youtube/player_parameters
             autoplay: 1,
         }
     }
-    const x = (e) => {
+    const pause = (e) => {
         e.target.pauseVideo();
     }
     return (
         <div>
-            <YouTube videoId={key} opts={opts} onReady={x} />
+            <YouTube videoId={key} opts={opts} onReady={pause} />
         </div>
     );
 };
