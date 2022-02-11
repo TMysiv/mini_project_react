@@ -6,10 +6,11 @@ import {Rating} from "react-simple-star-rating";
 import css from './movieListCard.css'
 import {imageUrls} from "../../configs/imageUrls";
 
-const MovieListCard = ({movie,recommended}) => {
+const MovieListCard = ({value,recommended}) => {
 
     const {color} = useSelector(state => state['movieReducer']);
-    const {title, backdrop_path, vote_average, id} = movie
+
+    const {title, backdrop_path, vote_average, id} = value
 
     return (
         <div className={ color?'card_dark':'card_light'}>

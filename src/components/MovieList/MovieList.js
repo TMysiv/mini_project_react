@@ -25,13 +25,14 @@ const MovieList = ({recommended}) => {
         <div className={color?'wrap_movie_dark':'wrap_movie_light'}>
                 <div className={'user'}>
                     <img src="https://winreviewer.com/wp-content/uploads/2013/10/Avatar.jpg" alt="logo"/>
-                    Taras</div>
+                    TMysiv
+                </div>
                 <h2>{recommended?'Recommended for you':genreName}</h2>
 
                 <div className={'cards_wrap'}>
                 {status === 'pending' && <h2>Loading...</h2>}
                 {error && <h2>{error}</h2>}
-                {movies.map(value => <MovieListCard key={value.id} movie={value} recommended={recommended}/>)}
+                {movies.map(value => <MovieListCard key={value.id} value={value} recommended={recommended}/>)}
                 </div>
 
                 <div className={'cards_button'}>
