@@ -2,7 +2,7 @@ import React from 'react';
 import {NavLink} from "react-router-dom";
 import {useDispatch} from "react-redux";
 
-import {getGenres} from "../../store/movie.slice";
+import {getGenre} from "../../store/movie.slice";
 
 const Genre = ({genre}) =>
 {
@@ -12,7 +12,7 @@ const Genre = ({genre}) =>
 
     return (
         <div>
-            <NavLink to={name} onClick={()=>{dispatch(getGenres({genre}))}}>{name}</NavLink>
+            <NavLink to={name} onClick={()=>{dispatch(getGenre({genre}))}}>{name}</NavLink>
         </div>
     );
 };

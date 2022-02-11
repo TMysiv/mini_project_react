@@ -23,7 +23,9 @@ const MovieList = ({recommended}) => {
     return (
 
         <div className={color?'wrap_movie_dark':'wrap_movie_light'}>
-
+                <div className={'user'}>
+                    <img src="https://winreviewer.com/wp-content/uploads/2013/10/Avatar.jpg" alt=""/>
+                    Taras</div>
                 <h2>{recommended?'Recommended for you':genreName}</h2>
 
                 <div className={'cards_wrap'}>

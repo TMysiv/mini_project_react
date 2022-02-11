@@ -57,7 +57,7 @@ const movieSlice = createSlice({
         getSwitch: (state, action) => {
             state.color = !action.payload.color
         },
-        getGenres: (state, action) => {
+        getGenre: (state, action) => {
             if (action.payload.genre) {
                 state.genresId = action.payload.genre.id
                 state.genreName = action.payload.genre.name
@@ -96,4 +96,4 @@ const movieSlice = createSlice({
 let movieReducer = movieSlice.reducer;
 export default movieReducer
 
-export const {incPage, decrPage, getSwitch, getGenres} = movieSlice.actions;
+export const {incPage, decrPage, getSwitch, getGenre} = movieSlice.actions;
